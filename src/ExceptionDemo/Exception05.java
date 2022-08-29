@@ -1,5 +1,9 @@
 package ExceptionDemo;
 
+/*
+ * Call Stack 機制
+ * 
+ */
 public class Exception05 {
 	
 		static void A() {
@@ -8,6 +12,9 @@ public class Exception05 {
 			}catch(Exception e) {
 				System.out.println("A方法處理的");
 				System.out.println(e.getMessage());
+				
+				// 將例外事件丟出去
+				throw e;
 			}
 		}
 		static void B() {
@@ -18,12 +25,18 @@ public class Exception05 {
 			B();
 		}
 	
-	
-	
-	public static void main(String[] args) {
-		C();
-		System.out.println("程式執行完畢");
-	}
-	
+		public static void main(String[] args) {
+			try {
+				C();
+				
+			}catch(Exception e){
+				
+				e.printStackTrace();
+			}
+			
+			System.out.println("程式執行完畢");
+
+			
+		}
 
 }
