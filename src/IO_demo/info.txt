@@ -1,0 +1,17 @@
+資源自動關閉 (try....with....resources)
+
+在撰寫IO程序時，當資源使用完畢或系統結束時，要關閉 IO 資源
+忘了關? 有可能造成資源的浪費
+
+
+try-with-resources 將用到的IO物件在 try() 裡面先行定義
+編譯器在編譯時，自動加上 finally 和 close() 將資源關閉語法
+
+AutoCloseable 介面
+
+所有支援資源自動關閉物件，都會時做 AutoCloseable
+
+public interface AutoCloseable{
+	void close() throws Exception;
+}
+
